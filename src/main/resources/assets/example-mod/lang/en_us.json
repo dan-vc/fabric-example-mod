@@ -1,0 +1,9 @@
+{
+  "item.example-mod.pink_garnet": "Pink Garnet",
+  "item.example-mod.raw_pink_garnet": "Raw Pink Garnet",
+  "block.example-mod.pink_garnet_block": "Block of Pink Garnet",
+  "block.example-mode.raw_pink_garnet_block": "BLock of Raw Pink Garnet",
+
+  "itemgroup.example-mod.pink_garnet_items": "Pink Garnet Items",
+  "itemgroup.example-mod.pink_garnet_blocks": "Pink Garnet Blocks"
+}
