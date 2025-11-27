@@ -1,7 +1,11 @@
 package net.daner.examplemod.item;
 
 import net.daner.examplemod.Examplemod;
+import net.daner.examplemod.item.custom.ChiselItem;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -12,9 +16,19 @@ import java.util.function.Function;
 
 public class ModItems {
     // Create the item with its Settings
-    public static final Item PINK_GARNET = register("pink_garnet");
+    public static final Item PINK_GARNET = register(
+            "pink_garnet",
+            Item::new,
+            new Item.Settings().food(new FoodComponent.Builder().build()) // Make the Item Edible
+    );
 
     public static final Item RAW_PINK_GARNET = register("raw_pink_garnet");
+
+    public static final Item CHISEL = register(
+            "chisel",
+            ChiselItem::new,
+            new Item.Settings().maxDamage(32)
+    );
 
     /*
     // Register an Item by name and Item
@@ -50,5 +64,8 @@ public class ModItems {
         });
         */
 
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
+            entries.add(CHISEL);
+        });
     }
 }
