@@ -25,6 +25,7 @@ public class ModBlocks {
             AbstractBlock.Settings.create()
                     .strength(4f)
                     .requiresTool()
+                    .luminance(s -> 15)
                     .sounds(BlockSoundGroup.AMETHYST_BLOCK)
     );
     public static final Block RAW_PINK_GARNET_BLOCK = registerBlock(
@@ -57,6 +58,15 @@ public class ModBlocks {
                     .strength(4f)
                     .requiresTool()
                     .sounds(BlockSoundGroup.AMETHYST_BLOCK)
+    );
+
+    public static final Block COMPACTOR_BLOCK = registerBlock(
+            "compactor_block",
+            CompactorBlock::new,
+            AbstractBlock.Settings.create()
+                    .strength(3f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.STONE)
     );
 
     /*
